@@ -61,7 +61,7 @@
             <key code="46" action="m"/>
             <key code="47" action="."/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" output=""/>
+            <key code="49" action="_"/>
             <key code="50" output=""/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
@@ -118,7 +118,9 @@
             <key code="126" output="&#x001E;"/>
         </keyMap>
     </keyMapSet>
-    <actions>%actions%</actions>
+    <actions>
+%actions%
+    </actions>
     <terminators>
         <when state="," output=""/>
         <when state="." output=""/>

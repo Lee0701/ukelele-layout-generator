@@ -2,6 +2,11 @@
 const fs = require('fs')
 const path = require('path')
 
+const indent = '    '
+const indent2 = indent + indent
+const indent3 = indent + indent + indent
+const space = '\u3000'
+
 const convert = (content) => {
     const entries = content.split(/\r?\n/).map((line) => line.split('\t'))
     const actions = {}
@@ -23,14 +28,17 @@ const convert = (content) => {
     const result = []
     Object.keys(actions).forEach((id) => {
         const set = new Set()
-        result.push(`<action id="${id}">`)
+        result.push(indent2 + `<action id="${id}">`)
         for(const [state, action] of Object.entries(actions[id])) {
             const {next, output} = action
-            if(output) result.push(`    <when state="${state}" output="${output}"/>`)
-            else if(next) result.push(`    <when state="${state}" next="${next}"/>`)
+            if(output) result.push(indent3 + `<when state="${state}" output="${output}"/>`)
+            else if(next) result.push(indent3 + `<when state="${state}" next="${next}"/>`)
             set.add(state)
         }
-        result.push(`</action>`)
+        if(id == '_') {
+            result.push(indent3 + `<when state="none" output="${space}"/>`)
+        }
+        result.push(indent2 + `</action>`)
     })
     return result.join('\n')
 }
