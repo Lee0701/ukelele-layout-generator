@@ -1,7 +1,7 @@
 
 const fs = require('fs')
 const path = require('path')
-const { convert, format } = require('./tbl2xml')
+const { convert, format } = require('./tsv2xml')
 
 const main = async (...args) => {
     const dirname = 'src'
