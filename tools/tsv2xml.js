@@ -53,4 +53,4 @@ const main = async (inFile, outFile) => {
 }
 
 if(require.main === module) main(...process.argv.slice(2))
-module.exports = {convert, format}
+module.exports = { convert, format }

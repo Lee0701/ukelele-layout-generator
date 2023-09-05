@@ -9,21 +9,28 @@ const keys = [
     ...[...'_'],
 ]
 
-const flatten = (arr, key = '') => {
+const _convert = (arr, key = '') => {
     if(typeof arr == 'string') return [[key, arr]]
     if(Array.isArray(arr)) return arr.flatMap((a, i) => {
-        return flatten(a, key + keys[i])
+        return _convert(a, key + keys[i])
     })
 }
 
-const build = (data) => Object.fromEntries(data.filter(([_k, v]) => v.trim() && v.charAt(0) != '@'))
+const build = (data) => data.filter(([_k, v]) => v.trim() && v.charAt(0) != '@')
+
+const convert = (content) => {
+    const converted = _convert(JSON.parse(content))
+    const result = build(converted)
+    const output = result.map((line) => line.join('\t')).join('\n')
+    return output
+}
 
 const main = async (...args) => {
     const [inFile, outFile] = args
-    const content = JSON.parse(fs.readFileSync(inFile, 'utf8'))
-    const result = build(flatten(content))
-    const output = Object.entries(result).map((line) => line.join('\t')).join('\n')
+    const content = fs.readFileSync(inFile, 'utf8')
+    const output = convert(content)
     fs.writeFileSync(outFile, output)
 }
 
 if(require.main === module) main(...process.argv.slice(2))
+module.exports = { convert }
