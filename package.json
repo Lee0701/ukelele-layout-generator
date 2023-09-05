@@ -4,9 +4,13 @@
   "description": "",
   "main": "tools/index.js",
   "scripts": {
-    "start": "node tools/index.js"
+    "build": "node tools/index.js",
+    "build-parser": "peggy tools/parser.pegjs"
   },
   "keywords": [],
   "author": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "peggy": "^3.0.2"
+  }
 }
