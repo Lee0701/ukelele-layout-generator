@@ -1,5 +1,6 @@
 
 const fs = require('fs')
+const path = require('path')
 
 const convert = (content) => {
     const entries = content.split(/\r?\n/).map((line) => line.split('\t'))
@@ -34,20 +35,20 @@ const convert = (content) => {
     return result.join('\n')
 }
 
-const format = (content) => {
+const format = (id, name, actions) => {
     const template = fs.readFileSync('data/template.keylayout', 'utf-8')
     const replacements = {
-        id: -Math.floor(Math.random() * 32768),
-        name: 'TUT-Code',
-        actions: content,
+        id, name, actions,
     }
     return template.replace(/\%([a-z]+)\%/g, (match, name) => replacements[name])
 }
 
 const main = async (inFile, outFile) => {
+    const id = -Math.floor(Math.random() * 32768)
+    const name = path.basename(inFile, path.extname(inFile))
     const content = fs.readFileSync(inFile, 'utf-8')
     const result = convert(content)
-    const output = format(result)
+    const output = format(id, name, result)
     fs.writeFileSync(outFile, output)
 }
 
