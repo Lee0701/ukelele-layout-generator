@@ -13,55 +13,55 @@
     </modifierMap>
     <keyMapSet id="JIS">
         <keyMap index="0">
-            <key code="0" action="a"/>
-            <key code="1" action="s"/>
-            <key code="2" action="d"/>
-            <key code="3" action="f"/>
-            <key code="4" action="h"/>
-            <key code="5" action="g"/>
-            <key code="6" action="z"/>
-            <key code="7" action="x"/>
-            <key code="8" action="c"/>
-            <key code="9" action="v"/>
-            <key code="11" action="b"/>
-            <key code="12" action="q"/>
-            <key code="13" action="w"/>
-            <key code="14" action="e"/>
-            <key code="15" action="r"/>
-            <key code="16" action="y"/>
-            <key code="17" action="t"/>
-            <key code="18" output=""/>
-            <key code="19" output=""/>
-            <key code="20" output=""/>
-            <key code="21" output=""/>
-            <key code="22" output=""/>
-            <key code="23" output=""/>
+            <key code="0" %key_a%/>
+            <key code="1" %key_s%/>
+            <key code="2" %key_d%/>
+            <key code="3" %key_f%/>
+            <key code="4" %key_h%/>
+            <key code="5" %key_g%/>
+            <key code="6" %key_z%/>
+            <key code="7" %key_x%/>
+            <key code="8" %key_c%/>
+            <key code="9" %key_v%/>
+            <key code="11" %key_b%/>
+            <key code="12" %key_q%/>
+            <key code="13" %key_w%/>
+            <key code="14" %key_e%/>
+            <key code="15" %key_r%/>
+            <key code="16" %key_y%/>
+            <key code="17" %key_t%/>
+            <key code="18" %key_1%/>
+            <key code="19" %key_2%/>
+            <key code="20" %key_3%/>
+            <key code="21" %key_4%/>
+            <key code="22" %key_6%/>
+            <key code="23" %key_5%/>
             <key code="24" output=""/>
-            <key code="25" output=""/>
-            <key code="26" output=""/>
+            <key code="25" %key_9%/>
+            <key code="26" %key_7%/>
             <key code="27" output=""/>
-            <key code="28" output=""/>
-            <key code="29" output=""/>
+            <key code="28" %key_8%/>
+            <key code="29" %key_0%/>
             <key code="30" output=""/>
-            <key code="31" action="o"/>
-            <key code="32" action="u"/>
+            <key code="31" %key_o%/>
+            <key code="32" %key_u%/>
             <key code="33" output=""/>
-            <key code="34" action="i"/>
-            <key code="35" action="p"/>
+            <key code="34" %key_i%/>
+            <key code="35" %key_p%/>
             <key code="36" output="&#x000D;"/>
-            <key code="37" action="l"/>
-            <key code="38" action="j"/>
+            <key code="37" %key_l%/>
+            <key code="38" %key_j%/>
             <key code="39" output=""/>
-            <key code="40" action="k"/>
-            <key code="41" action=";"/>
+            <key code="40" %key_k%/>
+            <key code="41" %key_;%/>
             <key code="42" output=""/>
-            <key code="43" action=","/>
-            <key code="44" action="/"/>
-            <key code="45" action="n"/>
-            <key code="46" action="m"/>
-            <key code="47" action="."/>
+            <key code="43" %key_,%/>
+            <key code="44" %key_/%/>
+            <key code="45" %key_n%/>
+            <key code="46" %key_m%/>
+            <key code="47" %key_.%/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" action="_"/>
+            <key code="49" %key__%/>
             <key code="50" output=""/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>

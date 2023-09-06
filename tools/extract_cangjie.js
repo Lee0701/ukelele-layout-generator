@@ -12,7 +12,7 @@ const convert = (content) => {
 }
 
 const main = async (...args) => {
-    const [inFile, outFile] = ['Unihan/Unihan_DictionaryLikeData.txt', 'out/cangjie_unihan.tsv']
+    const [inFile, outFile] = ['Unihan/Unihan_DictionaryLikeData.txt', 'src/cangjie_unihan.tsv']
     const input = fs.readFileSync(inFile, 'utf8')
     const output = convert(input)
     fs.writeFileSync(outFile, output)
