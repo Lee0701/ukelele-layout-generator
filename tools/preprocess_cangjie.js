@@ -11,14 +11,10 @@ const convert = (content) => {
         map[code].push(char)
     })
     const result = Object.entries(map).flatMap(([code, chars]) => {
-        if(chars.length == 1) {
-            return [`${code}\t${chars[0]}`]
-        } else {
-            return [
-                `${code}_\t${chars[0]}`,
-                ...chars.map((char, i) => `${code}${i + 1}\t${char}`),
-            ]
-        }
+        return [
+            `${code}_\t${chars[0]}`,
+            ...chars.map((char, i) => `${code}${i + 1}\t${char}`),
+        ]
     })
     const output = result.join('\n')
     return output

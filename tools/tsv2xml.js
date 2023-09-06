@@ -45,7 +45,7 @@ const convert = (content) => {
         for(const [state, action] of Object.entries(actions[id])) {
             const {next, output} = action
             if(output) result.push(indent3 + `<when state="${state || 'none'}" output="${output}"/>`)
-            else if(next && next != id) result.push(indent3 + `<when state="${state || 'none'}" next="${next}"/>`)
+            else result.push(indent3 + `<when state="${state || 'none'}" next="${next}"/>`)
         }
         if(id == '_') {
             result.push(indent3 + `<when state="none" output="${space}"/>`)
