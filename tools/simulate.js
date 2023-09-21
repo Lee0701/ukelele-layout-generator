@@ -8,7 +8,8 @@ function drawLayout(layout) {
 }
 
 function loadLayout(filename) {
-    return Object.fromEntries(fs.readFileSync(filename, 'utf8').split('\n')
+    return Object.fromEntries(fs.readFileSync(filename)
+            .toString().split('\n')
             .map((line) => line.split('\t')))
 }
 
@@ -27,13 +28,26 @@ async function main(args) {
     const stdin = process.stdin
     const layout = loadLayout(args[0])
     const text = []
+    const composing = []
     stdin.on('data', (data) => {
-        if(data.toString() === '\x1b') {
+        data = data.toString()
+        if(data == '\x1b') {
             exit()
+        } else if(data == '\x7f') {
+            if(composing.length) composing.pop()
+            else text.pop()
+        } else {
+            composing.push((data == ' ') ? '_' : data)
+            if(composing.join('') == '_') text.push(composing.pop() && '\u3000')
         }
         drawLayout(layout)
-        text.push(data.toString())
-        process.stdout.write(text.join(''))
+        const val = layout[composing.join('')]
+        if(val) {
+            text.push(val)
+            composing.splice(0, composing.length)
+        }
+        const key = composing.join('')
+        process.stdout.write(text.join('') + (key ? `<${key}>` : ''))
     })
     stdin.setRawMode(true)
     drawLayout(layout)
