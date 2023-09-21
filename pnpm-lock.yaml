@@ -8,6 +8,9 @@ dependencies:
   peggy:
     specifier: ^3.0.2
     version: 3.0.2
+  string-template:
+    specifier: ^1.0.0
+    version: 1.0.0
 
 packages:
 
@@ -28,4 +31,8 @@ packages:
   /source-map-generator@0.8.0:
     resolution: {integrity: sha512-psgxdGMwl5MZM9S3FWee4EgsEaIjahYV5AzGnwUvPhWeITz/j6rKpysQHlQ4USdxvINlb8lKfWGIXwfkrgtqkA==}
     engines: {node: '>= 10'}
+    dev: false
+
+  /string-template@1.0.0:
+    resolution: {integrity: sha512-SLqR3GBUXuoPP5MmYtD7ompvXiG87QjT6lzOszyXjTM86Uu7At7vNnt2xgyTLq5o9T4IxTYFyGxcULqpsmsfdg==}
     dev: false

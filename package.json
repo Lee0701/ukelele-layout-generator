@@ -11,6 +11,7 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "peggy": "^3.0.2"
+    "peggy": "^3.0.2",
+    "string-template": "^1.0.0"
   }
 }
