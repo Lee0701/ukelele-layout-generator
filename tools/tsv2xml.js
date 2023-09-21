@@ -49,6 +49,8 @@ const convert = (content) => {
         }
         if(id == '_') {
             result.push(indent3 + `<when state="none" output="${space}"/>`)
+        } else {
+            result.push(indent3 + `<when state="none" next="${id}"/>`)
         }
         result.push(indent2 + `</action>`)
     })
