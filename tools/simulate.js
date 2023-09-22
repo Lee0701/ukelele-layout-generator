@@ -34,7 +34,7 @@ async function main(args) {
         if(data == '\x1b') {
             exit()
         } else if(data == '\x7f') {
-            if(composing.length) composing.pop()
+            if(composing.length) composing.splice(0, composing.length)
             else text.pop()
         } else {
             composing.push((data == ' ') ? '_' : data)
