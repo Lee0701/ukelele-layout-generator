@@ -40,7 +40,10 @@ async function main(args) {
             composing.push((data == ' ') ? '_' : data)
             if(composing.join('') == '_') text.push(composing.pop() && '\u3000')
         }
-        drawLayout(layout)
+        const layoutToDraw = Object.fromEntries(Object.entries(layout)
+            .filter(([k, v]) => k.startsWith(composing.join('')) && composing.length == k.length - 1)
+            .map(([k, v]) => [k.slice(composing.length), v]))
+        drawLayout(layoutToDraw)
         const val = layout[composing.join('')]
         if(val) {
             text.push(val)
